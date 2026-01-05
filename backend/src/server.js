@@ -18,8 +18,9 @@ app.use(express.json()); //this middleware will parse JSON bodies: req.body
 //     next();
 // });
 
-app.use("/api/notes", notesRoutes);
 app.use(ratelimiter);
+app.use("/api/notes", notesRoutes);
+
 
 connectDB().then(()=>{
     app.listen(5001, () =>{
