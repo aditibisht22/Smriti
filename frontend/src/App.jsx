@@ -1,9 +1,27 @@
-import React from 'react'
+import {Route,Routes} from "react-router";
+
+import Homepage from "./pages/HomePage";
+import CreatePage from "./pages/CreatePage";
+import NoteDetailPage from "./pages/NoteDetailPage";
+
+
 
 const App = () => {
   return (
-    <div>
-        
+    <div data-theme="valentine">
+    <button className="btn btn-neutral">Neutral</button>
+<button className="btn btn-primary">Primary</button>
+<button className="btn btn-secondary">Secondary</button>
+<button className="btn btn-accent">Accent</button>
+<button className="btn btn-info">Info</button>
+<button className="btn btn-success">Success</button>
+<button className="btn btn-warning">Warning</button>
+<button className="btn btn-error">Error</button>
+        <Routes>
+          <Route path="/" element={<Homepage/>} />
+          <Route path="/create" element={<CreatePage/>} />
+          <Route path="/note/:id" element={<NoteDetailPage/>} />
+        </Routes>
     </div>
   )
 }
